@@ -51,25 +51,32 @@
 - Health endpoint: /health (working, returns healthy)
 - App URL: https://app.flowbotsai.com (accessible)
 
-## CRITICAL DISCOVERY - Conversion Direction
-FLOWBOTS converts FROM RPA platforms TO CODE, not RPA-to-RPA:
+## API DISCOVERY COMPLETE
 
-| Source Platforms | Target Outputs |
-|------------------|----------------|
-| UiPath (.xaml) | Node.js |
-| Power Automate (.json) | TypeScript |
-| Automation Anywhere (.xml) | Python |
-| Blue Prism | |
+**Endpoint:** `POST https://api.flowbotsai.com/api/v1/convert`
 
-**Conversion Steps:**
-1. Upload: Drag and drop UiPath XAML, AA XML, or PAD JSON
-2. AI Conversion: Engine analyzes and maps activities to code
-3. Download: Get complete Node.js/TS/Python project
+**Source Platforms (5):**
+- uipath
+- automationAnywhere
+- powerAutomate (PAD)
+- bluePrism
+- flowbots (Node.js)
 
-**Test Strategy Update:**
-- Test RPA artifacts → Code conversion (not RPA → RPA)
-- Validate generated code compiles/runs
-- Check activity mapping accuracy
+**Target Platforms (5):**
+- flowbots (Node.js)
+- automationAnywhere
+- powerAutomate (PAD)
+- powerAutomateCloud
+- uipath
+
+**Full conversion matrix = 5×5 - 5 (same-to-same) = 20 directions**
+
+**API Flow:**
+1. POST /api/v1/convert (multipart form) → returns jobId
+2. GET /api/v1/jobs/{jobId} → poll until status=completed/failed
+3. GET /api/v1/jobs/{jobId}/files?format=zip → download results
+
+**Authentication:** X-API-Key header or Bearer token
 
 ## Environment Status
 
