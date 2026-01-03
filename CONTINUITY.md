@@ -8,15 +8,49 @@
 - **Total Tests:** 2,900 (24 directions × 100 tests + 500 real workflows)
 - **Plan File:** /Users/bjwet/.claude/plans/parallel-hugging-mist.md
 
-## Phase 0 Progress
+## Phase 0 Progress - COMPLETE
 
 | Task | Status |
 |------|--------|
 | Claude CLI on Windows | COMPLETE (v2.0.76) |
-| Git repo setup | IN PROGRESS |
+| Git repo setup | COMPLETE (becomethebagfx/flowbots-e2e-testing) |
+| Git for Windows | COMPLETE (v2.47.1) |
 | Resource monitoring script | COMPLETE |
 | Twilio alert script | COMPLETE |
 | Test runner framework | COMPLETE |
+
+## RPA Platform Status
+
+| Platform | Installed | Path | Notes |
+|----------|-----------|------|-------|
+| UiPath Studio | YES | C:\Program Files\UiPath\Studio | Ready |
+| Power Automate Desktop | YES | C:\Program Files (x86)\Power Automate Desktop | Ready |
+| Blue Prism | YES | C:\Program Files\Blue Prism Limited\Blue Prism Automate | Ready |
+| Automation Anywhere | NO | - | Need to install Bot Agent |
+
+## Phase 1 Progress - IN PROGRESS
+
+| Task | Status |
+|------|--------|
+| Create UiPath Simple tier artifacts | COMPLETE (20/20) |
+| Create PAD Simple tier artifacts | COMPLETE (20/20) |
+| Create Blue Prism Simple tier artifacts | COMPLETE (20/20) |
+| Test runner framework | COMPLETE |
+| FLOWBOTS API discovery | IN PROGRESS |
+
+## Artifacts Created
+
+| Platform | Tier | Count | Location |
+|----------|------|-------|----------|
+| UiPath | Simple | 20 | C:\flowbots_lab\artifacts_source\uipath\simple |
+| PAD | Simple | 20 | C:\flowbots_lab\artifacts_source\pad\simple |
+| Blue Prism | Simple | 40 | C:\flowbots_lab\artifacts_source\blueprism\simple |
+
+## API Discovery Notes
+- API base: https://api.flowbotsai.com
+- Health endpoint: /health (working, returns healthy)
+- App URL: https://app.flowbotsai.com (accessible)
+- Need to explore web UI for correct conversion endpoints
 
 ## Environment Status
 
