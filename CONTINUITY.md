@@ -50,7 +50,26 @@
 - API base: https://api.flowbotsai.com
 - Health endpoint: /health (working, returns healthy)
 - App URL: https://app.flowbotsai.com (accessible)
-- Need to explore web UI for correct conversion endpoints
+
+## CRITICAL DISCOVERY - Conversion Direction
+FLOWBOTS converts FROM RPA platforms TO CODE, not RPA-to-RPA:
+
+| Source Platforms | Target Outputs |
+|------------------|----------------|
+| UiPath (.xaml) | Node.js |
+| Power Automate (.json) | TypeScript |
+| Automation Anywhere (.xml) | Python |
+| Blue Prism | |
+
+**Conversion Steps:**
+1. Upload: Drag and drop UiPath XAML, AA XML, or PAD JSON
+2. AI Conversion: Engine analyzes and maps activities to code
+3. Download: Get complete Node.js/TS/Python project
+
+**Test Strategy Update:**
+- Test RPA artifacts → Code conversion (not RPA → RPA)
+- Validate generated code compiles/runs
+- Check activity mapping accuracy
 
 ## Environment Status
 
