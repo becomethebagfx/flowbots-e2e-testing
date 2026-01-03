@@ -78,6 +78,28 @@
 
 **Authentication:** X-API-Key header or Bearer token
 
+## Authentication: RESOLVED
+
+Obtained JWT token via /api/v1/auth/login endpoint.
+Token valid for 7 days.
+
+## Test Results
+
+### Test 1: UiPath Simple_File_Create -> FlowBots
+- **Job ID:** 52125525-e4b2-4c68-9d03-b38195429f34
+- **Status:** completed (but with errors)
+- **Parse Time:** 0ms
+- **Conversion Time:** 52ms
+- **Result:** PARTIAL SUCCESS
+  - Parsing: OK
+  - Activity mapping: 1 activity identified
+  - Documentation: Generated (README, walkthrough, migration guide)
+  - File output: FAILED (server permission denied)
+  - Error: "EACCES: permission denied, open '/tmp/flowbots/output/.../index.js'"
+
+**Issue:** Server-side file system permission error preventing output files.
+**Root Cause:** FLOWBOTS infrastructure issue (not client-side)
+
 ## Environment Status
 
 | Environment | Host | Status | Purpose |
